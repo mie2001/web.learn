@@ -1,0 +1,58 @@
+<!-- 
+
+背景颜色： background-color    不加背景颜色默认透明
+
+背景图片：应用场景 1.logo 2.装饰性的小图片  3.超大的背景图片
+          background-image: url(路径)    优点是非常便于控制位置
+
+背景平铺：background-repeat:repeat/no-repeat/repeat-x/repeat-y
+         no-repeat指的是盒子大小不变，但是图片是只有一张1：1
+         默认情况下是平铺的
+         repeat-x向右平铺
+         repeat-y向下平铺
+
+背景图片位置：background-positon:x  y;
+            x y坐标    可以使用方位名词或者精确单位
+            方位名词：top center bottom left center right
+            只使用一个方位名词，则另一个参数默认居中显示
+
+背景图像固定:background-attachment设置背景图像是否固定还是随着页面的其余部分滚动
+            后期可以制作视差滚动的效果
+            属性 ： 默认scroll：背景图像随对象内容滚动   fixed:背景图像固定
+ 
+            
+背景颜色半透明:  background:rgba(0,0,0,0.3);  r:red g:green b:black a:透明度的参数数值在0~1之间
+
+背景的属性可以连写:
+           颜色 图片地址 平铺 滚动 位置  没有顺序约束
+           background: black url(images/bg.jpg) no-repeat fixed center top;
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景</title>
+    <style>
+        body {
+            background-image: url(images/bg.jpg);
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <p>我是何培杰</p>
+    <p>我是何培杰</p>
+    <p>我是何培杰</p>
+    <p>我是何培杰</p>
+    <p>我是何培杰</p>
+    <p>我是何培杰</p>
+</body>
+
+</html>

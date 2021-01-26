@@ -1,0 +1,91 @@
+<!-- 
+
+常见块级元素：
+  h1~h6   p  div ul ol li  div是最典型的块级元素
+ 
+块级元素的特点:
+  1.比较霸道，自己独占一行
+  2.高度、宽度、外边距以及内边距都可以控制
+  3.宽度默认是容器的100%
+  4.是一个容器及盒子，里面可以放行内或者块级元素
+
+注意：
+  文字类元素不能使用块级元素,比如h和p里面不能包含div
+  
+-->
+
+<!-- 
+
+常见行内元素有:
+      a strong b em i del s ins u span其中span是最典型的行内元素
+
+行内元素的特点：
+   1.相邻行内元素在一行上，一行可以显示多个元素
+   2.高、宽直接设置没有效果
+   3.行内元素只能容纳文本或者其它行内元素
+
+注意：
+   链接里面不能再放链接，但是链接可以放块级元素  
+
+
+-->
+
+<!-- 
+
+常见行内块元素:
+    img/  inPut/ td
+
+-->
+
+
+
+<!-- 
+  
+元素显示模式的转换： 
+    开发经常使用:比如要增加a的触发范围:display:block转换为块元素，然后就可以设置它的宽度和高度 
+
+display:block
+display:inline
+display:inline-block    
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>改变链接美观</title>
+    <style>
+        a {
+            display: block;
+            background-color: red;
+            text-decoration: none;
+            color: blue;
+            text-indent: 2em;
+            line-height: 40px;
+            width: 300px;
+            height: 40px;
+            font-size: 14px;
+        }
+        
+        a:hover {
+            background-color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <a href="#">手机 电话卡</a>
+    <a href="#">电视 盒子</a>
+    <a href="#">笔记本 平板</a>
+    <a href="#">出行 穿戴</a>
+    <a href="#">智能 路由器</a>
+    <a href="#">健康 儿童</a>
+    <a href="#">耳机 音响</a>
+</body>
+
+</html>

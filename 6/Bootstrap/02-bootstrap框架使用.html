@@ -1,0 +1,50 @@
+<!-- 
+
+bootstrap的优点:
+
+   让开发更简单，提高了开发的效率
+   标准化的html+css编码规范
+   提供了一套简介、直观、强悍的组件
+   有自己的生态圈、不断地更新迭代
+
+目前3.0版本偏向于开发响应式布局，移动设备优先的WEB项目，4.0是最新版本但是使用了新的技术不是很流行
+
+bootstrap使用四部曲：
+1.创建文件夹结构
+2.创建html骨架结构
+3.注意索引首页html的命名是index，因为浏览器默认识别index作为首页
+!4.html骨架的变化：  一定不要忘记引入bootstrap的样式文件  加一句 <link rel="stylesheet" href="D:\Web design\UI\Bootstrap3\bootstrap-3.3.7-dist\css\bootstrap.min.css">
+!5.bootstrap引入后会自动消除盒子的宽、高，所以不用再设置全局选择器了
+!6.bootstrap多了两个照顾IE浏览器的话，但是我觉得没有必要
+!7.要使用bootstrap的javascript样式，要增加几句话的引用，但是还没有学
+!8.bootstrap对样式的引用主要是通过类选择器，且必须按照它规定的类名进行引入才会起作用
+!9.修改bootstrap的样式注意权重问题   一个class的“”里面可以用多个类名 用空格分开即可 两个class似乎后面的不起作用
+!10.用bootstrap主要是知道它定义了哪些样式
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 要求当前网页使用IE浏览器最高版本的内核来渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 视口的设置：视口的宽度和设备一致，默认的缩放比列和PC端一致，用户不能自行缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="D:\Web design\UI\Bootstrap3\bootstrap-3.3.7-dist\css\bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        .hello {
+            width: 80px;
+            height: 45px;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" class="btn btn-danger ">Danger</button>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!-- 
+
+不同布局需要不同的布局容器: 主要针对 web 还是  移动
+
+Bootstrap提供了两个响应式开发的布局容器:
+   1.container类:  只需要使用container类就不用自己写媒体查询 然后让不同的设备进行响应式
+   2.container-fluid类：流式布局容器 适合于单独做移动端开发
+
+Bootstrap做响应式布局使用了栅格系统：
+   1.栅格系统是将页面布局平均分成若干等份，自动划分成12列，也就是将container分成了12等份
+   2.不同屏幕下container的宽度不同，分成的列也会相应不同
+   
+Bootstrap栅格系统的使用：  
+   1.栅格系统用于通过一些列的行和列的组合来创建页面布局
+   2.需求1:先创建一个块级标签，也就是创建一个行，然后将Bootstrap的container放到里面去就可以实现这个块级标签内容的响应式布局
+   3.需求2:要一个大盒子 实现屏幕大的时候装三个图片 随着屏幕缩小所能容纳的图片也会减少，这个响应式不用Bootstrap非常难做
+   !4.注意不同宽度设备的类前缀，没有搞懂  大屏幕，中屏幕，小屏幕,超小屏幕    也就是让盒子的列数加起来等于12列就可以了
+   
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大盒子的响应式布局</title>
+    <link rel="stylesheet" href="D:\Web design\UI\Bootstrap3\bootstrap-3.3.7-dist\css\bootstrap.min.css">
+    <style>
+        [class^="col"] {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <class class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">1</div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">2</div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">3</div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">4</div>
+        </class>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!-- 
+选择器：基础选择器    复合选择器
+
+基础也就是单个选择器组成 包括标签选择器 类选择器 id选择器 通配符选择器
+
+类选择器：差异化选择是开发最常用的选择器 语法：  .类名自命名{属性}   然后在body的标签里面调用
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类选择器</title>
+    <style>
+        .red {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+        
+        .green {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+        
+        li {
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="red">我是何培杰</li>
+        <li>我是何培杰</li>
+        <li>我是何培杰</li>
+        <li class="red">我是何培杰</li>
+    </ul>
+    <div class="red">我是何培杰</div>
+    <div class="green">我是何培杰</div>
+    <div class="red">我是何培杰</div>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!-- 
+
+将鼠标放在链接上后  链接会有特殊效果
+
+语法: a:
+
+具体看上课讲义
+
+
+
+注意事项:
+
+1.为了确保生效，请按照 :link :visited :hover :active的顺序  LV好
+
+2.因为a链接在浏览器具有默认样式,所以实际开发要给定a新的样式
+
+3.实际开发中一般 给a一个样式 然后给a一个hover就可以了 注意 text-decoration:none取消下划线
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实际开发链接状态</title>
+    <style>
+        a {
+            color: red;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="#">hello</a>
+
+</body>
+
+</html>
