@@ -1,0 +1,38 @@
+<!-- 
+    meta name :视口标签，为了移动端而生
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    !注意content里面的内容表示，布局的页面随着设备的宽度的改变而改变，
+    !还要加一句 content=“user-scalable=no”  表示不希望移动端用户自由缩放页面
+    !还要加两句：maximum-scale=1.0 minimun-scale=1.0   
+    
+    因此移动端完整的标准的完美的写法是:
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0,maximum-scale=1.0,minimun-scale=1.0">
+
+    物理像素比：一个px能显示的物理像素点的个数，称为物理像素比或者屏幕像素比
+    物理像素点指的是分辨率的数字
+    pc端分辨率的数字和px是1：1的关系
+    不同移动设备的分辨率和px不是一比一的关系
+    实际开发时用的单位是px
+    加入iphone8的物理像素比是2 而iphone8的分辨率是750*1334 也就是说我们用一张宽375px 高667px的图片就可以将整个iphone的屏幕覆盖
+
+    一张50*50px的图片直接放到iphone8里面会出现模糊的问题，因为手机采用的视网膜屏幕它会放大两倍，采取的策略是放一个100*100的图片，然后手动的把这个图片缩小为50*50
+    我们准备的图片比我们实际需要的大小大两倍，这种解决图片放到移动端清晰度降低的方法就叫两倍图，一般所有的手机都是视网膜屏幕，
+    因此实际开发过程中要想图片手机显示清晰，准备一个二倍图
+
+    
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0,maximum-scale=1.0,minimun-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    我是何培杰
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!-- 
+
+移动端主流方案，单独制作移动端页面   京东官网由pc版和移动端之分 通常情况下网址域名前面加上m可以打开移动端，通过判断设备蛇形，自动跳转到移动端页面
+      其次档案：响应式页面兼容  三星手机官网
+
+!响应式兼容pc和移动端制作起来非常麻烦，一般选择主流的单独制作pc页面和移动端页面
+
+移动端浏览器基本以webkit内核为主 ，放心使用h5标签和css3
+
+!移动端css初始化推荐使用normalize.css 保护了有价值的默认值，修复了浏览器的bug，是模块化的，拥有详细的文档
+
+!css3盒子模型 box-sizing  css3的盒子模型的padding和margin不会撑大盒子模型,所以css3摒弃了传统盒子模型计算的弊端
+!只需要在style里面添加一句话 box-sizing：border-box； 就可以让盒子变成css3的盒子，无需要考虑边框，内边框，外边框添加时将盒子撑大的情况，非常的nicce
+!移动端可以全部css3盒子模型，pc端如果完全兼容，就用传统的css2盒子模型，因为移动端的浏览器比较先进，pc端仍有些用户使用旧版浏览器
+
+!移动端放心完全使用h5标签
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div:nth-child(1) {
+            /* 传统盒子模型 */
+            box-sizing: content-box;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            border: 10px solid red;
+        }
+        
+        div:nth-child(2) {
+            /* css3新型盒子模型 */
+            box-sizing: border-box;
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            padding: 10px;
+            border: 10px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+</body>
+
+</html>

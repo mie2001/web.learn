@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=, minimum-scale=, maximum-scale=">
         <!-- Link Swiper's CSS -->
         <link rel="stylesheet" href="swiper-bundle.min.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- Demo styles -->
         <style>
             body {
@@ -35,8 +36,8 @@
 
     <body>
         <!-- Swiper -->
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
+        <div class="swiper-container container">
+            <div class="swiper-wrapper ">
                 <div class="swiper-slide" style="background-image:url(./images/1.jpg)"></div>
                 <div class="swiper-slide" style="background-image:url(./images/2.jpg)"></div>
                 <div class="swiper-slide" style="background-image:url(./images/3.jpg)"></div>
@@ -54,8 +55,9 @@
 
         <!-- Swiper JS -->
         <script src="swiper-bundle.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script>
-            var swiper = new Swiper('.swiper-container', {
+            var swiper = new Swiper('.swiper-container ', {
                 effect: 'coverflow',
                 grabCursor: true,
                 centeredSlides: true,

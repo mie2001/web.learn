@@ -1,0 +1,27 @@
+<!-- 
+
+解决移动端的链接高亮显示：  
+
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            /* 注意移动端浏览器的内核都是采用的webkit，因此这里专门针对移动端 */
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">何培杰</a>
+</body>
+
+</html>

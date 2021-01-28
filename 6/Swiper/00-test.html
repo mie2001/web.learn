@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="swiper.min.css">
+    <style>
+        .Excellent_swi {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        
+        .swiper-pagination-bullet {
+            width: 25px;
+            height: 5px;
+            display: inline-block;
+            border-radius: 0;
+            opacity: 0.5;
+            background: #FFFFFF;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: #C6A771;
+        }
+        
+        .swiper-button-prev,
+        .swiper-container-rtl .swiper-button-next {
+            background-image: url();
+        }
+        
+        .banner {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!--轮播 -->
+    <div class="Excellent_swi">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img class="banner" src="images/1.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img class="banner" src="images/2.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img class="banner" src="images/3.jpg" />
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <script src="swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+
+</html>
