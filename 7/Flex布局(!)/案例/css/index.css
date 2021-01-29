@@ -1,0 +1,210 @@
+/* 常规body格式 */
+
+
+/* !body的继承性，就近原则，normalize.css离
+!body近，所以继承了nomalize.css的margin样式*/
+
+body {
+    max-width: 1366px;
+    /* 最小缩放宽度定死320px*/
+    min-width: 320px;
+    /* 取消盒子本身的边框 */
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahoma, "Lucida Grance", Verdana, "Microsoft Yahei", STXihei, hei;
+    color: #000;
+    background: #f2f2f2;
+    /* 浮动的知识点 */
+    overflow-x: hidden;
+    /* 取消链接的高亮显示 */
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* 搜索模块 */
+
+.search-index {
+    display: flex;
+    /* 固定定位跟父级没有关系，以屏幕为准,因此要重新定义最大最小缩放宽度 */
+    position: fixed;
+    max-width: 1366px;
+    min-width: 320px;
+    background-color: #F6F6F6;
+    top: 0;
+    /* left：auto */
+    left: auto;
+    /* 固定的盒子必须由宽度 */
+    width: 100%;
+    height: 44px;
+    /* !有了定位之后居中对齐有自己的算法 
+     !left:50% transform:translateX(-50%) 在css3里面的*/
+}
+
+
+/* 让所有的链接没有下划线 */
+
+a {
+    text-decoration: none;
+}
+
+
+/* !运用css3的盒子模型让子盒子边框不再影响父盒子 */
+
+div {
+    box-sizing: border-box;
+    /* 必须添加浏览器前缀才能线性渐变 */
+}
+
+.search {
+    flex: 1;
+    height: 26px;
+    border: 1px solid #ccc;
+    margin: 7px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 24px;
+    padding-left: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.search::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/sprite.png)no-repeat -59px -279px;
+    margin: 5px;
+}
+
+.user {
+    width: 44px;
+    height: 44px;
+    font-size: 12px;
+    text-align: center;
+    color: #2eaae0;
+}
+
+.user::before {
+    content: "";
+    display: block;
+    width: 23px;
+    height: 23px;
+    /* !精灵图*/
+    background: url(../images/sprite.png) no-repeat;
+    background-size: 104px auto;
+    margin: 4px auto 0;
+}
+
+.focus {
+    /* 因为上面有个固定定位，所以要往下挪固定定位的高度 */
+    padding-top: 44px;
+}
+
+.focus img {
+    width: 100%;
+}
+
+.local-nav {
+    display: flex;
+    border-radius: 8px;
+    height: 64px;
+    margin: 3px 4px;
+    background-color: white;
+    list-style: none;
+    /* ul本身有边框 */
+    margin: 0;
+    padding: 0;
+}
+
+.local-nav li {
+    flex: 1;
+}
+
+.local-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* 属性选择器简化精灵图的代码 */
+
+.local-nav-icon {
+    width: 32px;
+    height: 32px;
+    background-color: pink;
+    margin: 5px;
+}
+
+nav {
+    margin: 0 4px 3px;
+}
+
+.nav-common {
+    display: flex;
+    border-radius: 8px;
+    height: 88px;
+    background: -webkit-linear-gradient(left, pink, blue);
+}
+
+.nav-common:nth-child(2) {
+    margin: 3px 0;
+}
+
+.nav-items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 44px;
+}
+
+.nav-items-2 {
+    flex: 1;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+
+.wifi {
+    display: flex;
+    list-style: none;
+    padding: 2px;
+    margin: 0;
+    border-radius: 8px;
+    /* 子盒子没有宽度是不会换行的 */
+    flex-wrap: wrap;
+}
+
+.wifi-li {
+    /*! 实现换行的做法是百分比表示 */
+    flex: 20%;
+}
+
+.wifi-li a {
+    /* 貌似flex只能影响一级 ，因此这里要再加一个flex*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wifi-span {
+    width: 28px;
+    height: 28px;
+    background: url(../images/subnav-bg.png) no-repeat;
+    background-size: 28px auto;
+    margin-top: 4px;
+}
+
+.sales {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sales-1 {
+    flex: 50%;
+}
+
+.sales-1 a img {
+    width: 100%;
+}

@@ -7,7 +7,7 @@ body {
     /* !让body居中对齐 */
     margin: 0 auto;
     font-size: 14px;
-    font-family: Helvetica, sans-serif;
+    font-family: -apple-system, Helvetica, sans-serif;
     /* 行高的定义：字体之间的距离 */
     line-height: 1.5;
     color: #666;
@@ -29,6 +29,8 @@ body {
     line-height: 45px;
     /* 让子级元素的文字变成白色 */
     color: white;
+    /* 去掉ul-li的圆圈点 */
+    list-style: none;
 }
 
 .app ul li:nth-child(1) {
@@ -59,3 +61,56 @@ body {
     width: 25%;
     background-color: #F63515;
 }
+
+.search {
+    /* 定位知识 */
+    position: relative;
+    height: 44px;
+    overflow: hidden;
+}
+
+
+/* !befor是什么玩意 */
+
+.search-:left::before {
+    content: "";
+    /* ? */
+    display: block;
+    width: 20px;
+    height: 18px;
+    background-image: url(../images/s-btn.png) no-repeat;
+}
+
+.search-left {
+    /* 定位知识 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: pink;
+    width: 40px;
+    height: 44px;
+}
+
+.search-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: purple;
+    height: 44px;
+    width: 40px;
+    line-height: 44px;
+    text-align: center;
+}
+
+.search-middle {
+    height: 30px;
+    background-color: white;
+    margin: 0 50px;
+    /* css3对盒子边角变成圆圈的样式 边角有四个若只有一个参数将应用到四个角上 */
+    border-radius: 15px;
+    /*! 子盒子加一个外边距会把父盒子带下来？ */
+    margin-top: 7px;
+}
+
+
+/* 精灵图? */

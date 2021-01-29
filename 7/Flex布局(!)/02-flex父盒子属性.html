@@ -1,0 +1,43 @@
+<!-- 
+
+父盒子的6个属性:
+
+flex-direction:设置主轴、侧轴，使子盒子按照什么方向来排列  默认是x轴方向为主轴，
+               flex-direction:column主轴方向为y轴方向
+               flex-direction:row主轴方向为x轴方向
+
+justify-content:设置主轴上的子盒子在主轴的排列方式 使用之前一定要确定好主轴是哪个
+                flex-start:默认从左到右排列,也就是x轴方向
+                flex-end:让子盒子贴着右边对齐，但是顺序不变
+               !flex-center:让盒子居中对齐，大大简化了布局代码
+                space-around:平分剩余空间
+               !space-between:先两边贴边，再分配剩余的空间
+
+flex-warp:设置子元素是否换行  flex布局默认盒子是不换行的,传统布局则是会另起一行显示
+          nowrap:默认值，不换行
+          wrap:换行           
+          
+?如果只有一个justify-content只能实现一个居中特征
+?子项为单项的意思是子盒子都在一行里面
+align-items:控制子盒子在侧轴上的排列方式，在子项为单项的时候使用
+            flex-start:从上到下
+            flex-end:从下到上
+           !center:垂直居中
+            stretch:拉伸让子盒子拉成和父盒子一样高，在子盒子设定了高度后失效
+?因此实现垂直居中，两个，主轴居中，侧轴居中
+?垂直居中盒子的排列跟设置的主轴有关系，呈现一个十字架并集关系
+
+?相当于把多项合并成单项进行操作
+align-content:设置子盒子在侧轴的排列方式，仅仅适用于子项出现换行的情况下，单行无效果
+              flex-start:
+              flex-end:
+              center:
+              space-around:
+              space-between:
+              stretch:
+?flex-nowrap对应align-items   flex-wrap对应align-content              
+
+flex-flow:是flex-direction flex-wrap的复合写法
+          flex-flow:column wrap  主轴是y轴 换行
+          
+-->
