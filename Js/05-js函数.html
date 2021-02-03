@@ -1,0 +1,30 @@
+<!-- 
+
+js的函数可以写在任意的位置
+
+js的函数的形参可以不用声明变量  形参的默认值是undefined
+
+js的函数不用声明函数类型，便可以直接返回
+
+遇到return语句的时候，函数停止运行，并返回指定的值,return 只能返回一个值。如果用逗号隔开多个值，以最后一个为准
+
+!arguments存储了所有传递的实参，是一个伪数组，应用：求任意数组的最大值
+// 利用函数求任意个数的最大值
+function getMax() { // arguments = [1,2,3]
+    var max = arguments[0];
+    for (var i = 1; i < arguments.length; i++) {
+        if (arguments[i] > max) {
+            max = arguments[i];
+        }
+    }
+    return max;
+}
+console.log(getMax(1, 2, 3));
+console.log(getMax(1, 2, 3, 4, 5));
+
+
+注意js的输出形式与c语言有所不同  c语言 ：printf("数组的最大值是%d",arr[1]);    js：alert('数组的最大值是'+arr[1]);
+
+js的函数由两种声明方式：定义声明、匿名声明
+
+-->
