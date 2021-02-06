@@ -1,0 +1,131 @@
+<!-- 
+
+获取元素通常使用两种方式：
+1. 利用 DOM 提供的方法获取元素 2. 利用节点层级关系获取元素
+ document.getElementById()
+ document.getElementsByTagName()
+ document.querySelector 等
+ 逻辑性不强、繁琐
+
+
+2. 利用节点层级关系获取元素
+ 利用父子兄节点关系获取元素
+ 逻辑性强， 但是兼容性稍差
+
+这两种方式都可以获取元素节点，我们后面都会使用，但是节点操作更简单
+-->
+<!-- 
+
+网页中的所有内容都是节点（标签、属性、文本、注释等），在DOM 中，节点使用 node 来表示。
+
+一般地，节点至少拥有nodeType（节点类型）、nodeName（节点名称）和nodeValue（节点值）这三个
+基本属性。
+
+ 元素节点 nodeType 为 1
+ 属性节点 nodeType 为 2
+ 文本节点 nodeType 为 3 （文本节点包含文字、空格、换行等）
+我们在实际开发中，节点操作主要操作的是元素节点
+
+-->
+<!-- 
+
+利用 DOM 树可以把节点划分为不同的层级关系，常见的是父子兄层级关系。
+
+1. 父级节点
+ node.parentNode
+ parentNode 属性可返回某节点的父节点，注意是最近的一个父节点
+ 如果指定的节点没有父节点则返回 null 
+
+2. 子节点
+   parentNode.childNodes（标准）
+parentNode.childNodes 返回包含指定节点的子节点的集合，该集合为即时更新的集合。
+注意：返回值里面包含了所有的子节点，包括元素节点，文本节点等。
+如果只想要获得里面的元素节点，则需要专门处理。 所以我们一般不提倡使用childNodes
+   parentNode.children（非标准）
+parentNode.children 是一个只读属性，返回所有的子元素节点。它只返回子元素节点，其余节点不返
+回 （这个是我们重点掌握的）。也是我们实际开发常用的
+虽然children 是一个非标准，但是得到了各个浏览器的支持，因此我们可以放心使用
+
+3.第一个和最后一个子节点：
+   parentNode.firstChild
+firstChild 返回第一个子节点，找不到则返回null。同样，也是包含所有的节点。
+    parentNode.lastChild
+lastChild 返回最后一个子节点，找不到则返回null。同样，也是包含所有的节点。
+   parentNode.firstElementChild
+firstElementChild 返回第一个子元素节点，找不到则返回null。
+    parentNode.lastElementChild
+lastElementChild 返回最后一个子元素节点，找不到则返回null。 注意：这两个方法有兼容性问题，IE9 以上才支持。
+
+  实际开发中，firstChild 和 lastChild 包含其他节点，操作不方便，而 firstElementChild 和
+lastElementChild 又有兼容性问题，那么我们如何获取第一个子元素节点或最后一个子元素节点呢？
+  解决方案：(伪数组)
+  1. 如果想要第一个子元素节点，可以使用 parentNode.chilren[0]
+  2. 如果想要最后一个子元素节点，可以使用 parentNode.chilren[parentNode.chilren.length - 1]
+
+4. 兄弟节点
+  node.nextSibling
+nextSibling 返回当前元素的下一个兄弟节点，找不到则返回null。同样，也是包含所有的节点。
+  node.nextElementSibling
+nextElementSibling 返回当前元素下一个兄弟元素节点，找不到则返回null。
+  node.previousSibling
+previousSibling 返回当前元素上一个兄弟节点，找不到则返回null。同样，也是包含所有的节点。
+  node.previousElementSibling
+previousElementSibling 返回当前元素上一个兄弟节点，找不到则返回null。
+ 注意：这两个方法有兼容性问题， IE9 以上才支持。
+-->
+<!-- 
+  
+情景：本来ul里面没有li，根据我想要的情况来动态生成li,首先创建li这个节点，然后将这个节点添加到ul里面
+
+创建节点:
+ document.createElement('tagName')
+document.createElement() 方法创建由 tagName 指定的 HTML 元素。因为这些元素原先不存在，
+是根据我们的需求动态生成的，所以我们也称为动态创建元素节点。
+
+添加节点:
+ 1. node.appendChild(child)      node 父级  child 是子级  只能附加到子节点的最后，不可以控制位置
+node.appendChild() 方法将一个节点添加到指定父节点的子节点列表末尾。类似于 CSS 里面的
+after 伪元素。
+ 2. node.insertBefore(child, 指定元素)   想要指定插入到父节点中子节点的位置，可以控制位置
+node.insertBefore() 方法将一个节点添加到父节点的指定子节点前面。类似于 CSS 里面的 before
+伪元素。
+
+-->
+<!-- 
+
+情景：发布了留言之后要删除留言，把ul里面的li删除
+
+删除节点:
+ node.removeChild(child)
+node.removeChild() 方法从 DOM 中删除一个子节点，返回删除的节点。
+
+
+-->
+<!-- 
+
+情景：有一个复制按钮，点一下就可以将代码复制过来
+
+复制节点(克隆节点)
+node.cloneNode()
+node.cloneNode() 方法返回调用该方法的节点的一个副本。 也称为克隆节点/拷贝节点
+注意：
+1. 如果括号参数为空或者为 false ，则是浅拷贝，即只克隆复制节点本身，不克隆里面的子节点。
+2. 如果括号参数为 true ，则是深度拷贝，会复制节点本身以及里面所有的子节点。   
+!默认是浅拷贝，仅仅复制标签，想要复制内容则加上true
+
+-->
+<!-- 
+三种动态创建元素区别
+ document.write()
+ element.innerHTML
+ document.createElement()
+
+区别
+1. document.write 是直接将内容写入页面的内容流，但是文档流执行完毕，则它会导致页面全部重绘
+2. innerHTML 是将内容写入某个 DOM 节点，不会导致页面全部重绘
+3. innerHTML 创建多个元素效率更高（不要拼接字符串，采取数组形式拼接），结构稍微复杂
+4. createElement() 创建多个元素效率稍低一点点，但是结构更清晰
+总结：不同浏览器下，innerHTML 效率要比 creatElement 高
+
+文档流执行完毕=window.onload=()    页面文档加载完毕后再执行js
+-->

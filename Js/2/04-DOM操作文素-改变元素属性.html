@@ -13,7 +13,17 @@ img.title=''
 !2. element.className 类名样式   实际开发经常使用
 2.JS 修改 style 样式操作，产生的是行内样式
 
+修改行内属性：
+(1) element.属性= '值'
+(2) element.setAttribute('属性', '值');  主要针对于自定义属性,设置索引号
 
+移除属性
+移除属性 removeAttribute(属性)  
+
+
+
+自定义属性目的：是为了保存并使用数据。有些数据可以保存到页面中而不用保存到数据库中。
+自定义属性开头必须是data规范化
 -->
 <!DOCTYPE html>
 <html lang="en">

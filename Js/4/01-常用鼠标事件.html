@@ -1,0 +1,39 @@
+<!-- 
+
+1.禁止鼠标右键菜单
+contextmenu主要控制应该何时显示上下文菜单，主要用于程序员取消默认的上下文菜单
+document.addEventListener('contextmenu', function(e) {
+e.preventDefault();
+})
+
+2.禁止鼠标选中（selectstart 开始选中）
+document.addEventListener('selectstart', function(e) {
+e.preventDefault();
+})
+
+3.鼠标移动事件 ：mousemove 给document注册事件
+
+-->
+<!-- 
+
+鼠标事件对象：Mouseevent
+
+ document.addEventListener('click', function(e) {
+            ! 1. client 鼠标在可视区的x和y坐标
+            console.log(e.clientX);
+            console.log(e.clientY);
+            console.log('---------------------');
+
+            ! 2. page 鼠标在页面文档的x和y坐标
+            console.log(e.pageX);
+            console.log(e.pageY);
+            console.log('---------------------');
+
+            ! 3. screen 鼠标在电脑屏幕的x和y坐标
+            console.log(e.screenX);
+            console.log(e.screenY);
+
+        })
+
+
+-->

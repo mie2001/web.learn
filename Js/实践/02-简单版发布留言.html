@@ -1,0 +1,98 @@
+<!-- 
+① 核心思路： 点击按钮之后，就动态创建一个li，添加到ul 里面。
+② 创建li 的同时，把文本域里面的值通过li.innerHTML 赋值给 li
+③ 如果想要新的留言后面显示就用 appendChild 如果想要前面显示就用insertBefore
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发布留言</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            padding: 100px;
+        }
+        
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid pink;
+            outline: none;
+            resize: none;
+        }
+        
+        ul {
+            margin-top: 50px;
+        }
+        
+        li {
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(245, 209, 243);
+            color: red;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+        
+        .btn2 {
+            position: relative;
+            left: 297px;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id=""></textarea>
+    <button>发布</button>
+    <ul>
+
+    </ul>
+    <script>
+        var btn = document.querySelector('button');
+        var text = document.querySelector('textarea');
+        var ul = document.querySelector('ul');
+        var i = 0;
+        btn.onclick = function() {
+            if (text.value == '') {
+                alert('您没有输入内容');
+                return false;
+            } else {
+                // console.log(text.value);
+                //创建li
+                var li = document.createElement('li');
+                //给li添加文本内容
+                li.innerText = text.value;
+                //给ul添加li元素
+                ul.insertBefore(li, ul.children[0]);
+                text.value = '';
+                //给li添加索引号
+                li.setAttribute('data-index', i);
+                //创建删除按钮
+                var btn2 = document.createElement('button');
+                btn2.innerText = '删除';
+                //删除按钮对应索引号
+                btn2.setAttribute('data-index', i)
+                    //索引号自增
+                i++;
+                //flex布局属性
+                btn2.setAttribute('class', 'btn2');
+                //给ul添加btn2元素
+                li.appendChild(btn2);
+            }
+            btn2.onclick = function() {
+                //index索引号变量
+                ul.removeChild(li);
+            }
+
+        }
+    </script>
+</body>
+
+</html>
