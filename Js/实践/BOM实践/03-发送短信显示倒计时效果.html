@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    手机号码： <input type="number"> <button>发送</button>
+    <script>
+        var btn = document.querySelector('button');
+        //思路:点击按钮事件后，触发一个倒计时效果，倒计时函数内触发一个按钮禁用的效果，并且触发一个按钮文本变化的效果,倒计时结束后按钮重新恢复
+        btn.onclick = function() {
+            //按钮禁用
+            btn.disabled = true;
+            //定义一个时间变量,这是这套代码的核心
+            var time = 5;
+            //提前调用一次函数，清除延迟效果,注意调用不用加function
+            countdown();
+            //开启倒计时效果  并且给计时器一个timer名称
+            var timer = setInterval(countdown, 1000);
+
+            function countdown() {
+                if (time == 0) {
+                    //如果倒计时结束
+                    btn.disabled = false;
+                    btn.innerHTML = '发送';
+                    clearInterval(timer);
+                } else {
+                    btn.innerHTML = '剩余' + time + '秒钟';
+                    time--;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

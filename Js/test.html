@@ -3,79 +3,37 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0,maximum-scale=1.0,minimun-scale=1.0">
-    <title>利用flex布局制作Tab栏切换</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间</title>
     <style>
-        body {
-            max-width: 540px;
-            min-width: 320px;
-            margin: 0 auto;
-            font-size: 14px;
-        }
-        
         div {
-            box-sizing: border-box;
+            margin: 200px;
         }
         
-        ul {
-            display: flex;
-        }
-        
-        li {
-            flex: 1;
+        span {
+            display: inline-block;
+            width: 80px;
+            height: 40px;
+            background-color: #333;
+            font-size: 20px;
+            color: #fff;
             text-align: center;
-            box-sizing: border-box;
-            list-style: none;
+            line-height: 40px;
         }
     </style>
 </head>
 
 <body>
-    <div class="big">
-        <div class="middle">
-            <ul class="a">
-                <li class="b">商品介绍</li class="b">
-                <li class="b">规格与包装</li class="b">
-                <li class="b">售后保障</li class="b">
-                <li class="b">商品评价</li class="b">
-                <li class="b">手机社区</li class="b">
-            </ul>
-        </div>
-
-        <div class="content">商品介绍板块内容</div>
-        <div class="content">规格与包装板块内容</div>
-        <div class="content">售后保障板块内容</div>
-        <div class="content">商品评价板块内容</div>
-        <div class="content">手机社区板块内容</div>
+    <div>
+        <span class="year">2021</span>
+        <span class="month">2</span>
+        <span class="day">6</span>
+        <span class="hour">20</span>
+        <span class="minute">38</span>
+        <span class="second">3</span>
     </div>
-    <script>
-        var tab_list = document.querySelector('.a');
-        var lis = tab_list.querySelectorAll('li');
-        var items = document.querySelectorAll('.content');
-        for (var i = 0; i < lis.length; i++) {
-            // 开始给5个小li 设置索引号 
-            lis[i].setAttribute('index', i);
-            lis[i].onclick = function() {
-                // 1. 上的模块选项卡，点击某一个，当前这一个底色会是红色，其余不变（排他思想） 修改类名的方式
 
-                // 干掉所有人 其余的li清除 class 这个类
-                for (var i = 0; i < lis.length; i++) {
-                    lis[i].className = 'b';
-                }
-                // 留下我自己 
-                this.className = 'current';
-                // 2. 下面的显示内容模块
-                var index = this.getAttribute('index');
-                ///console.log(index);
-                // 干掉所有人 让其余的item 这些div 隐藏
-                for (var i = 0; i < items.length; i++) {
-                    items[i].style.display = 'none';
-                }
-                // 留下我自己 让对应的item 显示出来
-                items[index].style.display = 'block';
-            }
-        }
-    </script>
+
 </body>
 
 </html>

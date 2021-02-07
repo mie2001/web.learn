@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector('div');
+        //设置time变量
+        var time = 6;
+        //提前调用一次函数，清除延迟效果
+        countdown();
+        //开启定时器
+        setInterval(countdown, 1000);
+
+        function countdown() {
+            if (time == 0) {
+                location.href = 'http://www.baidu.com';
+            } else {
+                div.innerHTML = '您将在' + time + '秒钟后自动跳转至百度';
+                time--;
+            }
+        }
+    </script>
+</body>
+
+</html>
