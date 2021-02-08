@@ -1,0 +1,61 @@
+<!-- 
+问题反馈的动画
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问题反馈</title>
+    <style>
+        .sliderbar {
+            position: fixed;
+            right: 0;
+            bottom: 100px;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            color: #fff;
+        }
+        
+        .con {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 40px;
+            background-color: purple;
+            z-index: -1;
+        }
+    </style>
+    <script src="animate.js"></script>
+</head>
+
+<body>
+    <div class="sliderbar">
+        <span>⬅</span>
+        <div class="con">问题反馈</div>
+    </div>
+    <script>
+        var father = document.querySelector('.sliderbar');
+        var son = document.querySelector('.con');
+        var span = document.querySelector('span');
+        father.addEventListener('mouseenter', function() {
+            //因为是往左走，所以要用到负值
+            //要解决延迟效果的话，在animate之前就修改即可
+            animate(son, -160, function() {
+                span.innerHTML = '➡';
+            });
+        })
+        father.addEventListener('mouseleave', function() {
+            animate(son, 0, function() {
+                span.innerHTML = '⬅';
+            });
+        })
+    </script>
+</body>
+
+</html>

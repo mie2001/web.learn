@@ -61,10 +61,31 @@
     <div class="main w">主体部分</div>
     <script>
         //思路：
+        //难点；计算解决原先绝对定位的top值导致的跳跃问题
         var go = document.querySelector('.goback');
         var gun = document.querySelector('.slider-bar');
+        var banner = document.querySelector('.banner');
+        var main = document.querySelector('.main');
+        var slidertop = gun.offsetTop - top;
+        //banner.offsettop就是需要的被卷去的头部的大小，灵活变量
         //发生页面滚动事件的时候
-        document.addEventListener('scroll', function() {})
+        document.addEventListener('scroll', function() {
+            //只要页面发生滚动让整个页面被卷去的头部超过某个数值时
+            if (window.pageYOffset >= banner.offsetTop) {
+                //盒子变成固定定位
+                gun.style.position = 'fixed';
+                //第一次变成固定定位的时候就把侧边栏的top值修改掉，防止跳跃问题
+                gun.style.top = slidertop + 'px';
+            } else {
+                gun.style.position = 'absolute';
+                gun.style.top = '300px';
+            }
+            if (window.pageYOffset >= main.offsetTop) {
+                go.style.display = 'block';
+            } else {
+                go.style.display = 'none';
+            }
+        })
     </script>
 </body>
 
