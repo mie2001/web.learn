@@ -1,0 +1,30 @@
+<!-- 
+Vue实例的作用范围是什么呢？
+Vue会管理el选项命中的元素及其内部的后代元素是否可以使用其他的选择器？
+是否可以设置其他的dom元素呢？
+可以使用其他的选择器,但是建议使用ID选择器
+可以使用其他的双标签,不能使用HTML和BODY
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">{{message}}</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: "你好，何培杰！"
+            }
+        })
+    </script>
+</body>
+
+</html>

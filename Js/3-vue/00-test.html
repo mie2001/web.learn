@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button id="a">添加数据</button>
+        <button id="b">删除数据</button>
+        <ul>
+            <li>1黑马程序员校区:北京</li>
+            <li>2黑马程序员校区:上海</li>
+            <li> 3黑马程序员校区:广州</li>
+            <li> 4黑马程序员校区:深圳</li>
+        </ul>
+    </div>
+    <script>
+        var btn1 = document.querySelector('#a');
+        var btn2 = document.querySelector('#b');
+        var div = document.querySelector('#app');
+        var h = document.querySelector('h2');
+        btn1.addEventListener('click', function() {
+            var h2 = document.createElement('h2');
+            div.appendChild(h2);
+            h2.innerHTML = '花菜炒蛋';
+        });
+        btn2.addEventListener('click', function() {
+
+            div.removeChild(h.children[0]);
+        });
+    </script>
+</body>
+
+</html>

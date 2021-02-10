@@ -1,0 +1,69 @@
+<div id="app">
+    <input type="button" value="事件绑定" v-on:click=“doIt ">
+    <input type="button " value="事件绑定 " v-on:monseenter=“doIt">
+    <input type="button" value="事件绑定" v-on:dblclick=“doIt ">
+    <input type="button " value="事件绑定 " @dblclick=“doIt">
+</div>
+
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        methods: {
+            doIt: function() {
+                // 逻辑
+            }
+        }
+    })
+</script>
+<!-- 
+ v-on指令的作用是:为元素绑定事件
+ 事件名不需要写on
+ 指令可以简写为@
+ 绑定的方法定义在methods属性中
+ 方法内部通过this关键字可以访问定义在data中数据
+-->
+
+<!-- 
+对比原生js和vue操作dom的区别:西兰花好好吃
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app" @click='chagefood'>
+        {{food}}
+    </div>
+</body>
+<script>
+    /*  js原生代码
+                var div = document.querySelector('div');
+                div.innerHTML = '西兰花炒蛋好好吃!';
+                div.addEventListener('click', function() {
+                    div.innerHTML += '好好吃!';
+                })
+            */
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    //VUe代码
+    var app = new Vue({
+        el: "#app",
+        data: {
+            food: "西兰花炒蛋好好吃!"
+        },
+        methods: {
+            chagefood: function() {
+                this.food += "好好吃!";
+            }
+        }
+    })
+</script>
+
+</html>

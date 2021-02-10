@@ -1,0 +1,26 @@
+<!-- 
+ v-html指令的作用是:设置元素的innerHTML
+ 内容中有html结构会被解析为标签
+ v-text指令无论内容是什么,只会解析为文本
+ 解析文本使用v-text,需要解析html结构使用v-html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p v-test='content'> </p>
+        <p v-html='content'></p>
+    </div>
+    <script>
+        var app = new Vue({})
+    </script>
+</body>
+
+</html>

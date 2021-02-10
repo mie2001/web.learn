@@ -1,0 +1,47 @@
+<!-- 
+axios的内核是ajas
+-->
+<!-- 
+导入axios网络请求库
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+-->
+<!-- 
+axios.get(地址?key=value&key2=values).then(function(response){},function(err){})     
+
+axios.post(地址,{key:value,key2:value2}).then(function(response){},function(err){})
+-->
+<!-- 
+ axios必须先导入才可以使用
+ 使用get或post方法即可发送对应的请求 
+ then方法中的回调函数会在请求成功或失败时触发
+通过回调函数的形参可以获取响应内容,或错误信息
+文档传送门
+https://github.com/axios/axios
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="请求笑话" class="get">
+    <input type="button" value="提交笑话" class="post">
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    var get = document.querySelector('.get');
+    get.addEventListener('click', function() {
+        axios.get("https://autumnfish.cn/api/joke/list?num=6").then(function(response) {
+            console.log(response);
+            alert(response.data.jokes[0]);
+        }, function(err) {
+            console.log(err);
+        })
+    })
+</script>
+
+</html>
